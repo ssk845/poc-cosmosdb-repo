@@ -6,6 +6,10 @@
     azure_config_dir: "/tmp/{{ tower_workflow_job_id }}"
   environment:
     AZURE_CONFIG_DIR: "{{ azure_config_dir }}"
+    AZURE_SUBSCRIPTION_ID: "6af82c96-2a41-49cd-87ad-3e385f240d38"
+    AZURE_CLIENT_ID: "f988b6ec-5faa-4c88-bf88-9e1beaaa2401"
+    AZURE_SECRET: "h488Q~nYAI9AasyT6LqFnVMFijKQZmsC5pXqValz"
+    AZURE_TENANT: "61952ee6-6c0e-4a3f-8626-75162de8f019"
   
   pre_tasks:
     - name: Verify az cli config directory is present 
@@ -14,10 +18,6 @@
         state: directory
   
   tasks:
-      export AZURE_SUBSCRIPTION_ID='6af82c96-2a41-49cd-87ad-3e385f240d38'
-      export AZURE_CLIENT_ID='f988b6ec-5faa-4c88-bf88-9e1beaaa2401'
-      export AZURE_SECRET='h488Q~nYAI9AasyT6LqFnVMFijKQZmsC5pXqValz'
-      export AZURE_TENANT='61952ee6-6c0e-4a3f-8626-75162de8f019'
-     
+      
     - name: Use Azure Service Principal to sign in
       shell: az login --service-principal --username {{ AZURE_CLIENT_ID }} --password {{ AZURE_SECERT_ID }} --tenant {{ AZURE_TENANT_ID }}
