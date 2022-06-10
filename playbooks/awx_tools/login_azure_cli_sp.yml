@@ -14,6 +14,7 @@
         state: directory
   
   tasks:
+  
     - name: Clear any existing login 
       shell: az account clear 
      
