@@ -1,3 +1,5 @@
+---
+
 - name: Login to Azure CLU as User account 
   hosts: localhost
   vars:
