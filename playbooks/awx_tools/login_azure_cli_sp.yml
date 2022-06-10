@@ -4,7 +4,7 @@
   hosts: localhost
   vars:
     azure_config_dir: "/tmp/{{ tower_workflow_job_id }}"
-  enviroment:
+  environment:
     AZURE_CONFIG_DIR: "{{ azure_config_dir }}"
   
   pre_tasks:
