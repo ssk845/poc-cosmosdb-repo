@@ -1,7 +1,5 @@
 ---
-
-- name: Login to Azure CLU as User account 
-  hosts: localhost
+- hosts: localhost
   vars:
     azure_config_dir: "/tmp/{{ tower_workflow_job_id }}"
   environment:
