@@ -22,5 +22,5 @@
       AZURE_SECRET: "{{ lookup('env','AZURE_SECRET_ID') }}"
       AZURE_TENANT: "{{ lookup('env','AZURE_TENANT_ID') }}"
     
-  - name: Use Azure Service Principal to sign in
-    shell: az login --service-principal --username {{ AZURE_CLIENT_ID }} --password {{ AZURE_SECERT_ID }} --tenant {{ AZURE_TENANT_ID }}
+    - name: Use Azure Service Principal to sign in
+      shell: az login --service-principal --username {{ AZURE_CLIENT_ID }} --password {{ AZURE_SECERT_ID }} --tenant {{ AZURE_TENANT_ID }}
