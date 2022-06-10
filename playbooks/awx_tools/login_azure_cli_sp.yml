@@ -16,6 +16,5 @@
         state: directory
   
   tasks:
-    
-- name: use az login   
-  shell: az login --service-principal --username {{ AZURE_CLIENT_ID }} --password {{ AZURE_SECERT_ID }} --tenant {{ AZURE_TENANT_ID }}
+    - name: use az login   
+      shell: az login --service-principal --username {{ AZURE_CLIENT_ID }} --password {{ AZURE_SECERT_ID }} --tenant {{ AZURE_TENANT_ID }}
