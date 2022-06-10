@@ -3,15 +3,7 @@
   gather_facts: true
   become: true
   tasks:
-    - block: #Install az cli on CentOs/RHEL
-      - name: Import the APT repo key (Debian)
-        shell: rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-      - name: Create local azure-cli repository information
-        shell: sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
-      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-
-    - block: #Install az cli on Debian/Ubuntu
+      - block: #Install az cli on Debian/Ubuntu
       - name: Run MS install script
         shell: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
